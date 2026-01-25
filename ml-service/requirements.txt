@@ -1,0 +1,24 @@
+# ML Service Requirements
+
+# Web Framework
+fastapi==0.115.0
+uvicorn[standard]==0.32.0
+pydantic==2.10.3
+python-multipart==0.0.20
+
+# Machine Learning (versiones con wheels pre-compilados para Windows)
+scikit-learn
+xgboost
+pandas
+numpy
+imbalanced-learn
+
+# Model Persistence
+joblib
+
+# Utilities
+python-dotenv
+
+# Development
+pytest
+httpx
