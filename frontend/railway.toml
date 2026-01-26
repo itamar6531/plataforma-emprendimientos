@@ -1,9 +1,9 @@
 [build]
 builder = "nixpacks"
-buildCommand = "npm install --legacy-peer-deps && npm run build"
+buildCommand = "rm -f package-lock.json && npm install && npm run build"
 
 [deploy]
 startCommand = "npx serve dist -s -l $PORT"
 
 [build.env]
-NIXPACKS_NODE_VERSION = "20"
+NIXPACKS_NODE_VERSION = "lts"
