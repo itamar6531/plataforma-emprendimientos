@@ -127,33 +127,67 @@ const UserCard = ({ user, currentUser, onStartChat }) => {
           </Box>
         </Box>
 
-        {/* Barra de completitud */}
+        {/* Barra de score/completitud */}
         <Box sx={{ mb: 2 }}>
-          <Box sx={{ display: 'flex', justifyContent: 'space-between', mb: 0.5 }}>
-            <Typography variant="caption" sx={{ color: '#a0a0a0' }}>
-              Perfil completado
-            </Typography>
-            <Typography variant="caption" sx={{ fontWeight: 600, color: '#fff' }}>
-              {completeness}%
-            </Typography>
-          </Box>
-          <Box
-            sx={{
-              height: 6,
-              borderRadius: 3,
-              bgcolor: 'rgba(255, 255, 255, 0.08)',
-              overflow: 'hidden'
-            }}
-          >
-            <Box
-              sx={{
-                height: '100%',
-                width: `${completeness}%`,
-                bgcolor: cardColor,
-                transition: 'width 0.3s ease'
-              }}
-            />
-          </Box>
+          {isEntrepreneur && profile?.predictionScore?.successScore != null ? (
+            // Emprendedor con score calculado: mostrar Score de éxito
+            <>
+              <Box sx={{ display: 'flex', justifyContent: 'space-between', mb: 0.5 }}>
+                <Typography variant="caption" sx={{ color: '#a0a0a0' }}>
+                  Score de éxito
+                </Typography>
+                <Typography variant="caption" sx={{ fontWeight: 600, color: '#fff' }}>
+                  {Math.round(profile.predictionScore.successScore)}%
+                </Typography>
+              </Box>
+              <Box
+                sx={{
+                  height: 6,
+                  borderRadius: 3,
+                  bgcolor: 'rgba(255, 255, 255, 0.08)',
+                  overflow: 'hidden'
+                }}
+              >
+                <Box
+                  sx={{
+                    height: '100%',
+                    width: `${profile.predictionScore.successScore}%`,
+                    bgcolor: cardColor,
+                    transition: 'width 0.3s ease'
+                  }}
+                />
+              </Box>
+            </>
+          ) : (
+            // Inversionista o emprendedor sin score: mostrar perfil completado
+            <>
+              <Box sx={{ display: 'flex', justifyContent: 'space-between', mb: 0.5 }}>
+                <Typography variant="caption" sx={{ color: '#a0a0a0' }}>
+                  {isEntrepreneur ? 'Sin análisis aún' : 'Perfil completado'}
+                </Typography>
+                <Typography variant="caption" sx={{ fontWeight: 600, color: '#fff' }}>
+                  {completeness}%
+                </Typography>
+              </Box>
+              <Box
+                sx={{
+                  height: 6,
+                  borderRadius: 3,
+                  bgcolor: 'rgba(255, 255, 255, 0.08)',
+                  overflow: 'hidden'
+                }}
+              >
+                <Box
+                  sx={{
+                    height: '100%',
+                    width: `${completeness}%`,
+                    bgcolor: cardColor,
+                    transition: 'width 0.3s ease'
+                  }}
+                />
+              </Box>
+            </>
+          )}
         </Box>
 
         {/* Biografía */}
