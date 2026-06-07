@@ -1,7 +1,5 @@
 # Plataforma de Emprendimientos Culinarios
 
-Plataforma web que conecta emprendedores culinarios con inversionistas en Kennedy, Guayaquil. Incluye sistema de mensajería en tiempo real y predicciones de éxito mediante Machine Learning.
-
 ## URLs de Producción
 
 | Servicio | URL |
