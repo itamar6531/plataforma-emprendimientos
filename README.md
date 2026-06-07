@@ -1,13 +1,5 @@
 # Plataforma de Emprendimientos Culinarios
 
-## URLs de Producción
-
-| Servicio | URL |
-|----------|-----|
-| Frontend | https://sparkling-imagination-production.up.railway.app |
-| Backend | https://plataforma-emprendimientos-production.up.railway.app |
-| ML Service | https://melodious-patience-production.up.railway.app |
-
 ## Tecnologías
 
 - **Frontend**: React 19, Vite, Material UI, Socket.io-client
